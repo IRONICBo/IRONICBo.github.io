@@ -166,13 +166,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/新手必需掌握的Linux命令/">新手必需掌握的Linux命令</a>
+      <a class="article-title" href="/2019/03/14/新手必需掌握的Linux命令/">新手必需掌握的Linux命令</a>
     </h1>
   
 
         
-        <a href="/2019/03/09/新手必需掌握的Linux命令/" class="archive-article-date">
-  	<time datetime="2019-03-09T15:30:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+        <a href="/2019/03/14/新手必需掌握的Linux命令/" class="archive-article-date">
+  	<time datetime="2019-03-14T15:48:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
 </a>
         
       </header>
@@ -180,12 +180,70 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##新手必需掌握的Linux命令</p>
-<p>##持续更新～qwq～<br>
-        
+<p>##持续更新～qwq～</p>
+<p>~1计算机命令</p>
+<p>1.echo:用于在终端输出字符串或变量提取的值  echo [字符串|变量]</p>
+<p>2.date:用于显示以及设置系统时间日期 date [选项][指定格式] date -s 修改时间</p>
+<p>3.reboot:用于重启系统&lt;默认只能用管理员重启&gt;</p>
+<p>4.poweroff:关闭系统</p>
+<p>5.wget:在终端下载网络文件 wget [参数] 地址<br>-p下载所有资源 -b 后台下载   -P下载到指定目录 -t最大尝试次数<br>-c断点续传-r递归下载</p>
+<p>6.ps:查看系统进程状态 ps[参数]<br>-a 显示所有进程 -ｕ用户以及其他信息 -x显示没有控制端的进程</p>
+<p>7.top:动态监视进程活动以及系统状态信息 [强化版任务管理器]</p>
+<p>8.pidof:查询指定任务的PID值 pidof[参数][进程名称]</p>
+<p>9.kill:用于终止某个指定PID服务进程</p>
+<p>10.killall:用于终止某个指定名称服务器对应全部进程</p>
+<p>~2系统状态检测命令</p>
+<p>1.ifconfig:用于获取网卡配置与网络状态等信息 ifconfig[网络设备][参数]</p>
+<p>2.uname:用于查看系统内核与系统版本信息 uname[-a]</p>
+<p>3.uptime:用于查看系统负载信息（当前事件 系统已运行时间 启用的终端数）</p>
+<p>4.free:用于显示好当前系统内存的使用量信息 free[-h]</p>
+<p>5.who:用于查看当前登入主机用户终端信息 who[参数]</p>
+<p>6.last:用于查看所有系统的登录记录 last[参数]（系统中以文件形式保存，易被篡改，不能轻信）</p>
+<p>7.history:显示历史执行过的命令 history[参数] 显示最近1000条命令，不够就修改etc/profile HISTSIZE的值<br>    -c 清空所有历史命令记录</p>
+<p>8.sosreport:用于手机系统配置及架构信息并输出诊断文档</p>
+<p>~3 工作目录切换命令</p>
+<p>1.pwd:用于显示用户当前所处的工作目录 pwd[选项]</p>
+<p>2.cd:用于切换工作路径 cd [目录名称]<br>    cd- 返回到上一次所处目录 cd..进入上级目录 cd~切换到当前目录</p>
+<pre><code>cd~username切换到其他用户的家目录 cd 目录 切换到目录
+</code></pre><p>3.ls:用于显示目录中的文本信息 ls [选项] [文件]<br>    -a 全部文件 -l 文件属性大小 (以上加-d可查看目录权限属性)</p>
+<p>~4 文本文件编辑命令</p>
+<p>1.cat:用于查看文本文件（内容较少的） cat[选项][文件] cat -n 可以显示行号</p>
+<p>2.more:用于查看纯文本文件（内容较多的）<br> more [选项] [文件] （可用空格活着回车向前翻页）</p>
+<p>3.head:用于查看纯文本文件的前n行 head [选项][文件]<br>    head -n 20前20行</p>
+<p>4.tail:用于查看纯文本文件的后n行或者持续刷新内容 tail[选项][文件]<br>    tail -n 20 可以持续刷新内容 tail -f 文件名 可以持续查看最新文件</p>
+<p>5.tr:用于替换文本文件中的字符 tr [原始字符][目标字符] （cat处理 通过管道符把文本内容传给tr命令）</p>
+<p>6.wc:用于统计指定文本的行数，字数，字节数 wc[参数] 文本</p>
+<pre><code>-l 只显示行数 -w只显示单词数 -l只显示字节数
+</code></pre><p>7.stat:用于查看文件的具体存储信息和时间信息 stat 文件名称</p>
+<p>8.cut:用于按列提取文本字符 cut [参数] 文本</p>
+<pre><code>-f 设置需要的列数 -d设置间隔符号
+</code></pre><p>9.diff:用于比较多个文本间的差异 diff[参数]文件</p>
+<pre><code>- -brief 确认两个文件是否相同 -c 详细比较多个文件的差异之处
+</code></pre><p>~5文件目录管理命令</p>
+<p>1.touch:用于创建空白文件或者设置文件的时间 touch[选项][文件]<br>    -a 仅修改读取时间 （atime） -m仅修改修改时间(mtime)<br>    -d 同时修改atime与mtime</p>
+<p>2.mkdir:用于创建空的目录 mkdir[选项][目录]<br>    -p递归创建出嵌套叠层关系的文件目录 </p>
+<p>3.cp:用于复制文件或者目录 cp[选项] 源文件目标文件</p>
+<p>-p 保留原始文件属性 -d对象为链接文件，保留该链接文件属性 -r递归持续复制（用于目录）-i若目标文件存在询问是否覆盖 -q 相当于 -pdr<br>4.mv:用于剪切文件或者将文件重命名 mv[选项] 源文件[目标路径|目标文件名]</p>
+<p>5.rm:用于删除文件或者目录 rm [选项] 文件</p>
+<pre><code>-f 强制删除 -r 用于删除一个目录
+</code></pre><p>6.dd:用于按照指定大小和个数的数据块来复制|转换文件 dd[参数]<br>    if输入文件的名称 of输出文件的名称 bs 设置每个块的大小 count设置要复制块的个数</p>
+<p>7.file:用于查看文件类型 file 文件名</p>
+<p>~6打包压缩与搜索命令</p>
+<p>1.tar:用于对文件进行打包压缩或者解压 tar[选项][文件]<br>-c创建压缩文件 -x解开压缩文件 -t查看压缩包有哪些文件<br>-z用Gzip解压 -b用bzipz压缩或者解压 -v显示压缩或者解压的过程（万一文件过大）<br>-f目标文件名 -p保留原始文件的权限和属性 -P使用绝对路径来压缩<br>-c指定解压到的目录 </p>
+<p>2.grep:用于在文本中执行快速搜索关键词，并且显示匹配到的结果 grep[选项][文件]<br>-b 将可执行文件当作文本文件搜索<br>-c仅显示找到的行数 -i忽略大小写 -n 显示行号 -v反向选择，仅列出没有关键词的行</p>
+<p>3.find:用于按指定条件查找文件 find[查找路径]寻找条件 操作<br>-name匹配名称 -prem匹配权限（mode 为完全匹配 -mode包含即可）<br>-user匹配所有者 -group匹配所有组 -mtime -n+n匹配修改内容的时间（-n n天以内 +n n天以前）<br>-atime -n +n匹配访问文件的时间 -ctime -n +n匹配修改权限的时间<br>-nouser 匹配无所有者的文件 -nogroup匹配无所有组的文件<br>-newer f1 ! f2 匹配比f1文件早比f2旧的文件<br>— -type b/d/c/p/l/f匹配文件的类型（后面字母表示小块设备，目录，字符设备管道符，链接文件等文本文件）</p>
+<ul>
+<li>-size匹配文件的大小（+50kb为查找超过50kb的文件 -50kb。。。）</li>
+<li>-prune忽略某个目录 -exec…….{}\;后面可跟进用于处理，搜索与命令</li>
+<li>exec对参数要求只要一个-</li>
+<li>exce cp -a {} /root/find/  \;   ({}find搜索出的每个符号)</li>
+</ul>
+<p>##参考文献《Linux就该这么学》</p>
+<h2 id="2019-3-9-晚-初稿"><a href="#2019-3-9-晚-初稿" class="headerlink" title="2019 3.9 晚 初稿"></a>2019 3.9 晚 初稿</h2>
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -193,7 +251,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/09/新手必需掌握的Linux命令/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/14/新手必需掌握的Linux命令/">展开全文 >></a>
         </p>
       
 
