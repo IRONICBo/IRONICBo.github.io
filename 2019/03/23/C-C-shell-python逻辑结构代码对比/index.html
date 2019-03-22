@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基础的排序算法C语言 | IRONICBo&#39;s BLOG</title>
+  <title>IRONICBo&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##基础的排序算法C语言 ##持续更新！！！~qwq~">
+  <meta name="description" content="title: ‘C/C++,shell,python逻辑结构代码对比’date: 2019-03-23 00:20:59tags:—C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基础的排序算法C语言">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/基础的排序算法C语言/index.html">
+<meta property="og:title" content="IRONICBo&#39;s BLOG">
+<meta property="og:url" content="http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/index.html">
 <meta property="og:site_name" content="IRONICBo&#39;s BLOG">
-<meta property="og:description" content="##基础的排序算法C语言 ##持续更新！！！~qwq~">
+<meta property="og:description" content="title: ‘C/C++,shell,python逻辑结构代码对比’date: 2019-03-23 00:20:59tags:—C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T14:37:47.414Z">
+<meta property="og:updated_time" content="2019-03-22T16:25:58.040Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基础的排序算法C语言">
-<meta name="twitter:description" content="##基础的排序算法C语言 ##持续更新！！！~qwq~">
+<meta name="twitter:title" content="IRONICBo&#39;s BLOG">
+<meta name="twitter:description" content="title: ‘C/C++,shell,python逻辑结构代码对比’date: 2019-03-23 00:20:59tags:—C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
   
     <link rel="alternative" href="/atom.xml" title="IRONICBo&#39;s BLOG" type="application/atom+xml">
   
@@ -158,343 +158,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-基础的排序算法C语言" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-C-C-shell-python逻辑结构代码对比" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      基础的排序算法C语言
-    </h1>
-  
-
-        
-        <a href="/2019/03/17/基础的排序算法C语言/" class="archive-article-date">
-  	<time datetime="2019-03-17T14:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##基础的排序算法C语言</p>
-<p>##持续更新！！！~qwq~</p>
+        <p>title: ‘C/C++,shell,python逻辑结构代码对比’<br>date: 2019-03-23 00:20:59<br>tags:—<br>C/C++,shell,python逻辑结构代码对比</p>
+<p>##持续更新!QwQ!</p>
 <a id="more"></a>
-<p>//等待排序顺序表存储方式（省略的函数的类型）</p>
-<p>#define MAXSIZE 20</p>
-<p>typedef int KeyType;</p>
-<p>typedef struct</p>
-<p>{</p>
-<pre><code>KeyType Key;
+<p>##循环结构：<br>C/C++:<br>{<br>for:<br>    单支：<br>    for(表达式1;表达式2;表达式3)<br>        语句；</p>
+<pre><code>双支：
+for(表达式1;表达式2；表达式3)
+{语句1;}
+else
+{语句2;}
 
-InfoType otherinfo;
-</code></pre><p>}RcodType;//记录类型</p>
-<p>typedef struct</p>
-<p>{</p>
-<pre><code>RcodType r[MAXSIZE+1];//放弃r[0]
+嵌套:
+for(表达式1;表达式2；表达式3)
+    for(表达式1;表达式2；表达式3)
+        {语句;}
+</code></pre><p>While:<br>    While(表达式)<br>        语句；</p>
+<pre><code>do
+{语句;}
+While(表达式)
 
-int length;
-</code></pre><p>}sqlist;</p>
-<p>##选择法排序</p>
-<p>SelectMinKey(Sqlist L,int i)</p>
-<p>{//依次比较无序子序列中所有元素的关键字，选出其中最小的并返回其位置</p>
-<pre><code>for(j=i+1;j&lt;=L.length;j++)
 
-    if(L.r[i].kry&gt;L.r[j].kry)
-
-        i=j;
-
-    return i;
+while(表达式)
+do
+    {语句;}
 </code></pre><p>}</p>
-<p>SelectSort(Sqlist &amp;L)</p>
-<p>{//利用简单选择排序法对顺序表L进行排序</p>
-<pre><code>for(i=1;i&lt;L.length;i++)
-
-{//选出无序序列中的最小关键字记录放入有序序列中，是的前者逐渐减小为只含一个记录为止
-
-    j=SelectMinKey(L,i);//选出L表中第i个元素后的所有元素中关键字最小者
-
-    if(i!=j)//若当前最小关键字记录和实际关键字记录不是同一个记录，则将其互相交换
-
-    {L.r[0]=L.r[i];L.r[i]=L.r[j];L.r[j]=L.r[0]}
-
-}
+<p>Python:<br>{<br>for:<br>    for 循环变量 in 循环结构：<br>        语句</p>
+<pre><code>for 循环变量 in 循环结构：
+    语句1
+else：
+    语句2
+</code></pre><p>While:<br>    While 条件：<br>        语句</p>
+<pre><code>While 条件：
+    语句1
+else：
+    语句2
 </code></pre><p>}</p>
-<p>##冒泡法排序</p>
-<p>exchange(KeyType x,KeyType y)//交换子函数，作用是将两个参数进行位置交换</p>
-<p>{t=x;x=y;y=t}</p>
-<p>BubbleSort(Sqlist &amp;L)</p>
-<p>{</p>
-<pre><code>for(i=L.length-1,sorted=true;i&gt;=1&amp;&amp;sorted;i--)//最多L.length-1趟排序
-
-{
-
-    sorted=false;//该趟排序起始时候还没有进行交换操作
-
-    for(j=1;j&lt;=i;j++)//在无子序列中逐对进行关键字比较
-
-        if(LT(L.r[j+1],L.r[j]))//若存在逆序则交换，并置交换标志为真
-
-        {exchange(L.r[j+1],L.r[i]);sorted=true}
-
-}
-</code></pre><p>}</p>
-<p>##插入法排序</p>
-<p>//直接插入排序</p>
-<p>InsertSort(Sqlist &amp;L)</p>
-<p>{</p>
-<pre><code>for(i=2;i&lt;=L.length;i++)
-
-    if(LT(L.r[i].key,L.r[i-1].key))//若待插入的关键字小于有序序列子列最后一个关键字则
-
-    {
-
-        L.r[0]=L.r[i];//首先将带插入的关键字赋复制为哨兵
-
-        L.r[i]=L.r[i-1];//再将有序子序列最后一个关键字后移一位
-
-        for(j=i-2;LT(L.r[0].key,L.r[j].key);j--)//一边比较一边后移
-
-            L.r[j+1]=L.r[j];//然后将有序子序列中大于待插入关键字的部分整体后移一位
-
-        L.r[j+1]=L.r[0];//将待插入关键字插入到合适位置
-
-    }
-</code></pre><p>}</p>
-<p>//希尔排序</p>
-<p>Shellinsert(Sqlist &amp;L,int dk)</p>
-<p>{//一趟希尔排序增量为dk</p>
-<pre><code>int i,j；
-
-for(i=dk+1;i&lt;=L.length;i++)
-
-    if(LT(L.r[i].key,L.r[i-dk].key))
-
-    {
-
-        L.r[0]=L.r[i];//将当前值暂存起来，以免被后移的关键字覆盖
-
-        j=i-dk;
-
-        while(LT(L.r[0].key,L.r[j].key))
-
-        {
-
-            if(j&lt;=0)//将本组内大于当前值的关键字后移一个位置，j&lt;=0表示已经扫描到本组头
-
-                break;
-
-            L.r[j+dk]=L.r[j];
-
-            j-=dk;
-
-        }
-
-        L.r[j+dk]=L.r[0];
-
-    }
-</code></pre><p>}</p>
-<p>ShellSort(Sqlist &amp;L,int d[],int t)</p>
-<p>{</p>
-<pre><code>int k;
-
-for(k=0;k&lt;t;k++)
-
-    Shellinsert(L,d[k]);//以第k个增量对 待排序列 进行一趟希尔排序
-</code></pre><p>}</p>
-<p>##归并排序</p>
-<p>Merge(Sqlist A,Sqlist B,Sqlist &amp;C)</p>
-<p>{//将有序表A和有序表B归并成新的有序表C</p>
-<pre><code>Pa=&amp;A.r[1];Pb=&amp;B.r[1];Pc=&amp;C.r[1];//A,B,C,中r[0]暂时不使用
-
-for(;(Pa&lt;=&amp;A.r[length])&amp;&amp;(Pb&lt;=&amp;B.r[length]);Pc++)
-
-{//逐个比较A和B当前记录的关键字，并将较小的关键字记录复制到C中
-
-    if(LQ(A.r[Pa].key,B.r[Pb].key)) C.r[Pc]+A.r[Pa++];
-
-    else C.r[Pc]=B.r[Pb++];
-
-}
-
-while(Pa&lt;=&amp;A.r[A.length]) C.r[Pc++]=A.r[Pa++]; //A还没有归并完
-
-while(Pb&lt;=&amp;B.r[B.length]) C.r[Pc++]=B.r[Pb++]; //A还没有归并完
-</code></pre><p>}</p>
-<p>##快速排序</p>
-<p>partition(Sqlist &amp;L,int low,int high)</p>
-<p>{//对子列表进行一次划分，确定枢轴的最终位置，从而完成一趟排序</p>
-<pre><code>KeyType p;//记录枢轴记录的关键字，以便于比较
-
-L.r[0]=L.r[low];//为减少交换次数，将枢轴暂存，待确定其最终位置后再将其移过去
-
-p=L.r[low].key;
-
-while(low&lt;high)//当low=high时，确定了枢轴的最终位置，即low（high）
-
-{//寻找枢轴的最终位置，对原列表进行划分
-
-    while(low&lt;high&amp;&amp;!LT(L.r[high].key,p))//向左移动high，越过不小于枢轴的记录，到达第一个小于枢轴的记录L.r[high]
-
-        high--;
-
-    L.r[low]=L.r[high];//将小于枢轴的记录与枢轴&quot;相互交换&quot;
-
-    while(low&lt;high&amp;&amp;LT(L.r[high].key,p))//向右移动low，越过小于枢轴的记录，到达第一个不比枢轴小的记录L.r[low]
-
-        low++;
-
-    L.r[high]=L.r[low];//将不小于枢轴的记录与枢轴&quot;相互交换&quot;
-
-}
-
-L.r[low]=L.r[0];//此时已经确定枢轴的最终位置，可以将其移过来了
-
-return low;//返回枢轴的最终位置
-</code></pre><p>}</p>
-<p>QuickSort(Sqlist &amp;L,int low,int high)</p>
-<p>{//对子列表进行递归地进行划分直至最大规模子列表只有一个记录为止</p>
-<pre><code>int plocation;
-
-if(low&lt;high)
-
-{
-
-    plocation=partition(L,low,high)//确定列表L中枢轴的最终位置
-
-    QuickSort(L,low,plocation-1);//对枢轴左部子列表进一步划分
-
-    QuickSort(L,plocation+1,high);//对枢轴右部的子列表进一步划分
-
-}
-</code></pre><p>}</p>
-<p>##堆排序</p>
-<p>typedef Sqlist HeapType;//堆采用顺序表存储方式</p>
-<p>HeapAdjust(HeadType &amp;H,int s,int m)</p>
-<p>{//序列H.r[s,m]中除了L.r[s]外都满足堆的特性，将H.r[s,m]调整为一个大堆顶</p>
-<pre><code>int j;
-
-ElemType temp;
-
-temp=H.r[s];//跳帧时可能有子孙结点交换到根结点，故需暂存根结点记录
-
-for(j=2*s;j&lt;m;j*=2)//从根结点开始沿关键字较大的结点向下筛选（优先考虑左孩子）
-
-{
-
-    if(j&lt;m&amp;&amp;LT(H.r[j].key,H.r[j+1].key)) j++;//j为关键字较大的结点的序号
-
-    if(!LT(temp.key,H.r[j].key))//若左右子树根结点都不大于根结点关键字则无需调整
-
-        break;
-
-    H.r[s]=H.r[j];//将较大关键字调整到根节点处
-
-    s=j;//并进一步调整以该较大关键字结点为根子树
-
-}
-
-H.r[s]=temp;
-</code></pre><p>}</p>
-<p>HeapSort(HeapType &amp;H)</p>
-<p>{</p>
-<pre><code>int i;
-
-ElemType temp;
-
-for(i=H.length/2;i&gt;0;i--)//建立初始堆
-
-{
-
-    HeapAdjust(H,i,H.length)
-
-    for(i=H.length;i&gt;1;i++)//将堆顶记录移到最后，并将无序子序列重新调整为堆
-
-    {temp=H.r[1];H.r[i];H.r[i]=temp;HeadAdjust(H,1,i-1);}
-
-}
-</code></pre><p>}</p>
-<p>##桶排</p>
-<p>##摘自CSDN博客</p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>#include &lt;stdlib.h&gt;</p>
-<p>typedef struct node {</p>
-<pre><code>int key;
-
-struct node *next;
-</code></pre><p>}KeyNode;</p>
-<p>void bucket_sort(int keys[],int size,int bucket_size) {</p>
-<pre><code>int i,j;
-
-KeyNode **bucket_table = (KeyNode **)malloc(bucket_size * sizeof(KeyNode*));
-
-for(i = 0;i &lt; bucket_size;i++) {
-
-    bucket_table[i] = (KeyNode*)malloc(sizeof(KeyNode));
-
-    bucket_table[i]-&gt;key = 0;
-
-    bucket_table[i]-&gt;next = NULL;
-
-}
-
-for(j = 0;j &lt; size;j++) {
-
-    KeyNode *node = (KeyNode *)malloc(sizeof(KeyNode));
-
-    node-&gt;key = keys[j];
-
-    node-&gt;next = NULL;
-
-    int index = keys[j]/10;
-
-    KeyNode *p = bucket_table[index];
-
-    if(p-&gt;key == 0) {
-
-        bucket_table[index]-&gt;next = node;
-
-        (bucket_table[index]-&gt;key)++;
-
-    }else {
-
-        while(p-&gt;next != NULL &amp;&amp; p-&gt;next-&gt;key &lt;= node-&gt;key)
-
-            p = p-&gt;next;
-
-        node-&gt;next = p-&gt;next;
-
-        p-&gt;next = node;
-
-        (bucket_table[index]-&gt;key)++;
-
-    }
-
-}
-
-//print result
-
-KeyNode * k = NULL;
-
-for(i = 0;i &lt; bucket_size;i++)
-
-    for(k = bucket_table[i]-&gt;next;k!=NULL;k=k-&gt;next)
-
-        printf(&quot;%d &quot;,k-&gt;key);
-
-printf(&quot;\n&quot;);
-</code></pre><p>}</p>
-<p>int main()</p>
-<p>{</p>
-<pre><code>int raw[] = {49,38,65,97,76,13,27,49};
-
-int size = sizeof(raw)/sizeof(int);
-
-bucket_sort(raw,size,10);
-</code></pre><p>}</p>
-<p>##参考文献 IRONICBo,《数据结构要点精析-C语言版》,《C语言程序设计入门》,CSDN</p>
-<p>##2019年3月16日 初稿</p>
+<p>Shell:<br>{<br>for 变量名 in 取值列表<br>do<br>    命令序列<br>done</p>
+<p>While 条件测试语句<br>do<br>    命令序列<br>done<br>}</p>
+<p>##条件选择结构<br>C/C++<br>{<br>If 表达式<br>{语句;}</p>
+<p>If 表达式<br>{ 语句；}<br>else<br>{语句；}</p>
+<p>if 表达式<br>    if 表达式<br>        {语句；}</p>
+<p>switch (表达式)<br>    case 常量: 语句；break；<br>    …<br>    default:表达式；break;<br>}</p>
+<p>Python:<br>{（&lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;）<br>If 条件：<br>    语句</p>
+<p>if 条件：<br>    语句1<br>else：<br>    语句2</p>
+<p>if 条件：<br>    语句1<br>elif 条件2：<br>    语句2<br>…<br>else:<br>    语句n<br>}</p>
+<p>Shell<br>{<br>If 条件测试 []<br>then 命令序列<br>fi</p>
+<p>if 条件测试[]<br>then 命令序列1<br>else 命令序列2<br>fi</p>
+<p>If 条件测试1<br>then 命令序列1<br>elif 条件测试2<br>then 命令序列2<br>else 命令序列3<br>fi</p>
+<p>case 变量值 in<br>模式1）<br>    命令序列1<br>    ;;<br>…<br>*）<br>    默认命令序列<br>esac<br>}</p>
+<p>##参考文献 IRONICBo ,Python</p>
+<p>#2019年3月23日 初稿</p>
 
       
 
@@ -574,7 +292,7 @@ bucket_sort(raw,size,10);
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/17/基础的排序算法C语言/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -588,18 +306,9 @@ bucket_sort(raw,size,10);
   
 <nav id="article-nav">
   
-    <a href="/2019/03/23/C-C-shell-python逻辑结构代码对比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/14/新手必需掌握的Linux命令/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">新手必需掌握的Linux命令</div>
+    <a href="/2019/03/17/基础的排序算法C语言/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基础的排序算法C语言</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -627,7 +336,7 @@ bucket_sort(raw,size,10);
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="基础的排序算法C语言" data-title="基础的排序算法C语言" data-url="http://yoursite.com/2019/03/17/基础的排序算法C语言/"></div>
+	<div class="ds-thread" data-thread-key="C-C-shell-python逻辑结构代码对比" data-title data-url="http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -650,8 +359,8 @@ bucket_sort(raw,size,10);
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/03/17/基础的排序算法C语言/", 
-    sourceId: "基础的排序算法C语言",
+    url: "http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/", 
+    sourceId: "C-C-shell-python逻辑结构代码对比",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -660,7 +369,7 @@ bucket_sort(raw,size,10);
   
 
   
-  <div id="SOHUCS" sid="基础的排序算法C语言"></div> 
+  <div id="SOHUCS" sid="C-C-shell-python逻辑结构代码对比"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
