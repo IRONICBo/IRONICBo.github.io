@@ -162,11 +162,74 @@
     <article id="post-C-C-shell-python逻辑结构代码对比" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/C-C-shell-python逻辑结构代码对比/">C/C++,shell,python逻辑结构代码对比</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/23/C-C-shell-python逻辑结构代码对比/" class="archive-article-date">
+  	<time datetime="2019-03-22T16:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>C/C++,shell,python逻辑结构代码对比</p>
+        <p>##C/C++,shell,python逻辑结构代码对比</p>
 <p>##持续更新!QwQ!</p>
-        
+<p>&lt;!- -more- -&gt;</p>
+<p>##循环结构：<br>C/C++:<br>{<br>for:<br>    单支：<br>    for(表达式1;表达式2;表达式3)<br>        语句；</p>
+<pre><code>双支：
+for(表达式1;表达式2；表达式3)
+{语句1;}
+else
+{语句2;}
+
+嵌套:
+for(表达式1;表达式2；表达式3)
+    for(表达式1;表达式2；表达式3)
+        {语句;}
+</code></pre><p>While:<br>    While(表达式)<br>        语句；</p>
+<pre><code>do
+{语句;}
+While(表达式)
+
+
+while(表达式)
+do
+    {语句;}
+</code></pre><p>}</p>
+<p>Python:<br>{<br>for:<br>    for 循环变量 in 循环结构：<br>        语句</p>
+<pre><code>for 循环变量 in 循环结构：
+    语句1
+else：
+    语句2
+</code></pre><p>While:<br>    While 条件：<br>        语句</p>
+<pre><code>While 条件：
+    语句1
+else：
+    语句2
+</code></pre><p>}</p>
+<p>Shell:<br>{<br>for 变量名 in 取值列表<br>do<br>    命令序列<br>done</p>
+<p>While 条件测试语句<br>do<br>    命令序列<br>done<br>}</p>
+<p>##条件选择结构<br>C/C++<br>{<br>If 表达式<br>{语句;}</p>
+<p>If 表达式<br>{ 语句；}<br>else<br>{语句；}</p>
+<p>if 表达式<br>    if 表达式<br>        {语句；}</p>
+<p>switch (表达式)<br>    case 常量: 语句；break；<br>    …<br>    default:表达式；break;<br>}</p>
+<p>Python:<br>{（&lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;）<br>If 条件：<br>    语句</p>
+<p>if 条件：<br>    语句1<br>else：<br>    语句2</p>
+<p>if 条件：<br>    语句1<br>elif 条件2：<br>    语句2<br>…<br>else:<br>    语句n<br>}</p>
+<p>Shell<br>{<br>If 条件测试 []<br>then 命令序列<br>fi</p>
+<p>if 条件测试[]<br>then 命令序列1<br>else 命令序列2<br>fi</p>
+<p>If 条件测试1<br>then 命令序列1<br>elif 条件测试2<br>then 命令序列2<br>else 命令序列3<br>fi</p>
+<p>case 变量值 in<br>模式1）<br>    命令序列1<br>    ;;<br>…<br>*）<br>    默认命令序列<br>esac<br>}</p>
+<p>##参考文献 IRONICBo ,Python</p>
+<p>#2019年3月23日 初稿</p>
+
       
 
       
