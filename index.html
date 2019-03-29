@@ -159,6 +159,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-HTML5基础知识清单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/30/HTML5基础知识清单/">HTML5基础知识清单</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/30/HTML5基础知识清单/" class="archive-article-date">
+  	<time datetime="2019-03-29T16:43:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##HTML5基础知识清单</p>
+<p>##持续更新！！！！！～～！！！！！</p>
+<p>0.基本结构<br>&lt;!DOCTTYPE html&gt;</p>
+<html><br>    <head><meta name="generator" content="Hexo 3.8.0"><br>            <meta charter="“UTF-8”/"><br>    </head><br><br>    <body><br>    </body><br></html>
+
+<p>1.头部内容<br>A.<title>用于 定义页面的标题，是成对标记，位于<head><meta name="generator" content="Hexo 3.8.0">之间<br>B.<meta>用于定义页面相关信息，为非成对标记<br>属性<br>    1).charset设置文章的字符编码格式<br>    2).http-equiv把信息写给浏览器看，让浏览器按照里面的要求执行<br>        Content-Type文档类型 refresh网页定时刷新 set-cookie设置浏览器cookie缓存，需配合content使用<br>    3).name属性，把信息写给搜索引擎看<br>        属性值：author作者keywords网页关键字(多个关键字用逗号隔开)description网页描述<br>C.<link>可以加载一个图片作为网页图片<br>    1).rel声明被链接文件与前文件的关键此处选icon<br>    2).type声明被链接文件的类型，可以省略<br>    3).herf表明图片的路径地址</head></title></p>
+<p>2.主题内容</p>
+<body><br>    <head><meta name="generator" content="Hexo 3.8.0">网站主题&lt;\head&gt;<br>    <nav>连接菜单</nav><br>    <article><br>            主内容<br>            <section><br>                    章节段落<br>            </section><br>    </article><br>    <aside>侧边栏</aside><br>    <footer>页脚</footer><br></head></body>
+
+<p>3.常见块级标签<br>A.</p><h1></h1>……<h6></h6>标题标签1-6级大小递减<br>B.<hr>水平线<br>C.<p></p>段落标签不同段落会自动增加换行符，段落上下各有空行间距<br>D.<br>换行<br>E.<black quote></black>引用标签表示引用的文字，cite属性一般用来引用网址<br>F.<prc></prc>预格式标签，按照原来的排列方式进行显示<br>G.<ul><li></li></ul>无序列表标签,type=“disc(圆形)，circle(空心圆)，square(方形)”<br>H.<ol><li></li></ol>有序列表标签，将列以按标签顺序排列，type=“1,A,a,I(大写罗马),i(小写罗马)”<br>I.<dl></dl>定义列表标签<br>    <dl><br>        <dt>列表标题</dt><br>        <dd>第一项</dd><br>    </dl><br>J.<div></div>分区标签，例如<div style="“width:100px;height:100px;background-color:red;”"></div><p></p>
+<p>4.常见的行级标签<br>A.<img>图片标签 <img src="“”alt=“”title=“”"><br>        src=表明图片的路径地址<br>        height/width;<br>        title用于设置图片的标题，鼠标指在图片上显示的文字<br>        alt设置图片周围文字相对图片的位置<br>B.<a></a>超链接标签<br>    herf描述链接的地址<br>    target可以定义通过超链接打开的文本文档显示在何处，常见的属性值为-self<br>C.其他常见的行级标签<br><span>用于组合文本中的行内元素，用于包裹部分文字修改样式<br><strong>表示内容的重要性，嵌套递增重要信级别<br><small>旁注，可以用在负责声明等<br><s>有误文本，文本加上删除的样式<br><b>加粗<br><i>斜体<br><cite>倾斜<br><q>短引用<br><code>只是表示代码，但浏览器只能显示等宽字体，需要配合<pre>使用</pre></code></q></cite></i></b></s></small></strong></span></p>
+<p>5.HTML5表格<br>1.表格的定义</p>
+<p><table> 行<tr> 列<td> </td></tr></table><br>A.border表格边框属性<br>B.width/height 表格布局属性<br>C.bdcolor表格背景色属性<br>D.backgroud表格背景图覆盖掉背景色<br>E.bordercolor表格边框颜色属性<br>F.cellspacing表格单元格间距属性<br>G.cellpadding表格单元内编剧的属性<br>H.align表格对齐属性（left center right）<br>I.width/height单元格高度/宽度属性<br>J.align单元格内容对其属性<br>K.valign单元格内容垂直对其属性<br>L.colspan/rowspan表格的跨行与跨列<br>    表格的结构化<br>    caption表格标题<br>    thead定义表格表头，通常为标题行<br>    tbody定义一段表格主题<br>    tfoot定义表格的脚尾通常为总计行<br>M.表格的直列化<br>几列一起<colgroup style="“background-color:yellow”"><br>    <col><br>    <col><br></colgroup></p>
+<col 。。。。。。。>
+
+<p>6.HTML5表单<br>A.action指定表单向何处发送数据，即需要发送的服务器地址<form action="“php”"><br>B.method<br>        1 get;少量，不安全<br>        2 Post;安全<br>        3 entype<br>            默认applicant/x-www-form-urlacoded<br>            multipart/form-data不用字符编写，用于上传文件<br>            text/plain将空格转化为”+”但是不编码特殊字符，将发送邮箱后使用<br>    D.input输入<br>            type 输入框的内容默认text<br>            name表示输入框的名称<br>            value表示输入框的默认值<br>            placeholder输入框提示信息当有value属性提示内容消失<br>            tabindex控制tab键的跳转顺序<br>            checked=“checked”默认选中<br>            disabled=“disabled”设置控件不能使用<br>            hidden=“hidden”设置隐藏控件<br>            text-》type:”text”<br>            password密码输入符<br>            radio单选按钮<br>            checkbox复选按钮<br>            file文件上传按钮<br>            submit表单提交按钮<br>            reset重置按钮<br>            image图形提交按钮（添加src路径，美化）<br>            button可单机按钮（通常于javascript配合使用）</form></p>
+<p>E.select下拉选择控件<br>    <select name="“week”"><br>        <option value="“1”">…</option><br>        <option>……<br>    </option></select></p>
+<pre><code>name=列表名
+multiple=“multiple”设置select为多选
+size=“1”可见选项数目
+</code></pre><p>F.option<br>    Value=“”当无value值直接传值当有value值时，传给value值<br>    title=“”鼠标指上后显示的文字<br>    selected=“selected”默认选中</p>
+<p>G.textarea文本域</p>
+<p><form action="“form.php”" method="“post”"><br>    <text area style="“width.....”"><br></text></form><br>1.cols规定可见列数，bws规定可见行数<br>2.readonly=“readonly”设置为只读模式，不允许编辑<br>3.disable=“disable”设置禁用文本域<br>4.style=“resize:none”设置宽高不允许修改<br>style=“overflow:hidden”当文本超出区域，可用hidden -x/-y分别设置水平或者垂直的显示方式<br>5.sroll无论怎样都会显示滚动条；auto自动决定未超出滚动条为灰色</p>
+<p>##IRONICBO</p>
+<p>##2019年3月30日初稿</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/30/HTML5基础知识清单/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C-C-shell-python逻辑结构代码对比" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
