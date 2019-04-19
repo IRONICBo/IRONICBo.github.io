@@ -162,12 +162,37 @@
     <article id="post-MySQL数据库增删查改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/MySQL数据库增删查改/">MySQL数据库增删查改</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/20/MySQL数据库增删查改/" class="archive-article-date">
+  	<time datetime="2019-04-19T16:31:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: MySQL数据库增删查改<br>date: 2019-04-20 00:24:02<br>tags:—</p>
-<p>##MySQL数据库增删查改</p>
+        <p>##MySQL数据库增删查改</p>
 <p>##持续更新！！！QQWWQQ</p>
-        
+<p>&lt;!—more—&gt;<br>1.数据类型<br>A.整型<br>TINYINT 字节1<br>SMALLINT 字节2<br>MEDIUMINT 字节3<br>INT 字节4<br>BIGINT 字节8<br>B.浮点型<br>FLOAT[(M,D)].        M为数字总位数。   D为小数点后面的位数<br>DOUBLE[(M,D)]<br>C.日期时间型<br>YEAR 字节1<br>TIME 字节3<br>DATE 字节3<br>DATETIME 字节8<br>TIMESTAMP 字节4<br>D.字符型<br>CHAR(M) 字节M<br>VARCHAR(M) 字节L+1  L&lt;=M<br>TINYTEXT 字节1<br>TEXT 字节1<br>MEDIUMTEXT 字节1<br>LONGTEXT 字节1<br>ENUM(‘1’,’2’) 字节1<br>SET(‘1’,’2’) 字节1</p>
+<p>2.登录<br>mysql -uroot -p&lt;密码&gt; - -prompt<br>MySQL默认的端口号 3306 超级用户 root</p>
+<p>2.常用命令<br>显示当前服务器版本<br>SELECT VERSION();<br>显示当前日期时间<br>SELECT NOW();<br>显示当前用户<br>SELECT USER();</p>
+<p>4.操作数据库<br>创建数据库<br>CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [DEFAULT] CHARACTRE SET [=] charset_name<br>查看当前服务器下的数据表列表<br>SHOW {DATABASES | SCHEMAS} [LIKE ‘pattern’ | WHERE expr]<br>修改数据库<br>ALTER {DATABASE | SCHEMA} [db_name] [DEFAULT] CHARACTER SET [=] charset_name<br>删除数据库<br>DROP {DATABASE | SCHEMA} [IF EXISTS] db_name</p>
+<p>5.创建数据表<br>打开数据库<br>USE 数据库名称<br>创建数据表<br>CREATE TABLE [IF NOT EXISTS] table_name(<br>    Colum_name data_type,<br>    …<br>)<br>查看数据表列表<br>SHOW TABLES [FROM db_name] [LIKE ‘pattern’ | WHERE expr]<br>查看数据表结构<br>SHOW COLUMNS FROM tbl_name<br>插入记录<br>INSRET [INTO] tbl_name [(col_name,数值…)] VALUES(Val,…)<br>记录查找<br>SELECT expr,…FROM tbl_name<br>自动编号（默认    起始值为1，每次增量为1）<br>AUTO_INCREAMENT</p>
+<p>6.约束<br>主键约束（唯一）<br>PRIMARY KEY<br>唯一约束（数据表可以存在多个）<br>UNIQUE KEY<br>默认约束<br>DEFAULT<br>非空约束<br>NOT NULL<br>外键约束<br>FOREIGN KEY<br>    编辑数据表的默认存储引擎<br>    default-storage-engine=INNODB<br>            外键约束的参照操作<br>            CASCADE:从父表中删除或者更新子表中匹配的行<br>            SET NULL:从父表中删除或者更新行，并设置子表中的外键列为NULL，如果使用该选项，必须保证子表列中没有指定NOT NULL<br>            RESTRICT:拒绝对父表的删除或者更新操作<br>            NO ACTION:标准SQL关键字，在MySQL中与RESTRICT相同</p>
+<p>7.修改数据表<br>添加单列<br>ALTER TABLE tbl_name ADD [COLUMN] col_name column_definition [FIRST | AFTER col_name]<br>添加多列<br>ALTER TABLE tbl_name ADD [COLUMN] (col_name column_definition,…)<br>删除列<br>ALTER TABLE tbl_name DROP [COLUMN] col_name<br>添加约束<br>    添加主键约束<br>    ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (index_col_name,…)<br>    添加唯一约束<br>    ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY] [index_type] (index_col_name,…)<br>    添加外键约束<br>    ALTER TABLE tbl_name ADD [CONSTAINT [symbol]] FPREIGN KEY [index_name] (index_col_name,…) reference_definition<br>    添加/删除默认约束<br>    ALTER TABLE tbl_name ALTER [COLUMNS] col_name {SET DEFAULT literal | DROP DEFAULT}<br>    删除主键约束<br>    ALTER TABLE tbl_name DROP PRIMARY KEY<br>    删除唯一约束<br>    ALTER TABLE tbl_name DROP {INDEX|KEY} index_name<br>    删除外键约束<br>    ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol<br>修改列定义<br>ALTER TABLE tbl_name MODIFY [COLUMN] col_name column_definition {FIRST|AFTER col_name}<br>修改列名称<br>ALTER TABLE tbl_name CHANGE [COLUMN] old_col_name new_col_name column_definition {FIRST|AFTER col_name}<br>数据表更名<br>1.ALTER TABLE tbl_name RENAME [TO|AS] new_tbl_name<br>2.ALTER TABLE tbl_name TO new_tbl_name [tbl_name2 TO new_tbl_name2]…</p>
+<p>8.插入记录<br>插入记录<br>1.INSERT [INTO] tnl_name [(col_name,…)] {VALLUES|VALUE} ({expr | DEFAULT},…),(…),…<br>2.INSERT [INTO] tbl_name SET col_name={expr|DEFAULT},…<br>更新记录（单表）<br>UPDATE [LOW_PRIORITY] [IGNORE] table_reference SET col_name1={expr1|DAFAULT} [col_name2={expr2|DEFAULT}]…[WHERE where_condition]<br>删除记录<br>DELETE FROM tbl_name [WHERE where_condition]<br>查找记录<br>SELECT select_expr[select_expr…]<br>[<br>    FROM table_reference<br>    [WHERE where_condition]<br>    [GROUP BY{col_name | position} [ASC |DESC],…]<br>    [HAVING where_condition]<br>    [ORDER BY{col_name | expr |position} [ASC |DESC],…]<br>    [LIMIT {[offset] row_count | row_count OFFSET offset}]<br>]</p>
+<p>9.子查询<br>使用[NOT] IN的子查询<br>operand comparison_operator [NOT] IN (subquery)=ANY运算符与IN等效!=ALL&lt;&gt;ALL运算符与NOT IN 等效<br>返回任何行 EXIST返回TRUE；否则为FALSE<br>使用[NOT]EXISTS的子查询<br>返回任何行 EXIST返回TRUE；否则为FALSE<br>将查询到的结果写入数据表<br>INSERT [INTO] tbl_name [(col_name,…)] SELECT …<br>多表更新<br>UPDATE table_references SET col_name1={expr1|DEFAULT} [col_name2={expr2|DEFAULT}]… [WHERE where_condition]<br>    连接类型<br>    INNER JOIN 内连接<br>    LEFT [OUTER] JOIN 左外连接<br>    RIGHT [OUTER] JOIN 右外连接</p>
+<p>##IMOOC，IRONIC.Bo</p>
+<p>##2019年4月20日</p>
+
       
 
       
