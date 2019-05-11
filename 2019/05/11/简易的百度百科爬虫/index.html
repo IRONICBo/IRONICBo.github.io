@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C/C++,shell,python逻辑结构代码对比 | IRONICBo&#39;s BLOG</title>
+  <title>简易的百度百科爬虫 | IRONICBo&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
+  <meta name="description" content="##简易的百度百科爬虫">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C&#x2F;C++,shell,python逻辑结构代码对比">
-<meta property="og:url" content="http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/index.html">
+<meta property="og:title" content="简易的百度百科爬虫">
+<meta property="og:url" content="http://yoursite.com/2019/05/11/简易的百度百科爬虫/index.html">
 <meta property="og:site_name" content="IRONICBo&#39;s BLOG">
-<meta property="og:description" content="##C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
+<meta property="og:description" content="##简易的百度百科爬虫">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-22T16:38:24.894Z">
+<meta property="og:updated_time" content="2019-05-11T05:10:33.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C&#x2F;C++,shell,python逻辑结构代码对比">
-<meta name="twitter:description" content="##C/C++,shell,python逻辑结构代码对比 ##持续更新!QwQ!">
+<meta name="twitter:title" content="简易的百度百科爬虫">
+<meta name="twitter:description" content="##简易的百度百科爬虫">
   
     <link rel="alternative" href="/atom.xml" title="IRONICBo&#39;s BLOG" type="application/atom+xml">
   
@@ -158,76 +159,126 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C-C-shell-python逻辑结构代码对比" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-简易的百度百科爬虫" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C/C++,shell,python逻辑结构代码对比
+      简易的百度百科爬虫
     </h1>
   
 
         
-        <a href="/2019/03/23/C-C-shell-python逻辑结构代码对比/" class="archive-article-date">
-  	<time datetime="2019-03-22T16:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
+        <a href="/2019/05/11/简易的百度百科爬虫/" class="archive-article-date">
+  	<time datetime="2019-05-11T05:03:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##C/C++,shell,python逻辑结构代码对比</p>
-<p>##持续更新!QwQ!</p>
+        <p>##简易的百度百科爬虫</p>
 <a id="more"></a>
-<p>##循环结构：<br>C/C++:<br>{<br>for:<br>    单支：<br>    for(表达式1;表达式2;表达式3)<br>        语句；</p>
-<pre><code>双支：
-for(表达式1;表达式2；表达式3)
-{语句1;}
-else
-{语句2;}
+<p>from bs4 import BeautifulSoup<br>import re<br>from urllib.parse import urlparse,urljoin</p>
+<p>class UrlManger(object):<br>    def <strong>init</strong>(self):<br>        self.new_urls=set()<br>        self.old_urls=set()</p>
+<pre><code>def add_new_url(self,url):
+    if url is None:
+        return
+    if url not in self.new_urls and url not in self.old_urls:
+        self.new_urls.add(url)
 
-嵌套:
-for(表达式1;表达式2；表达式3)
-    for(表达式1;表达式2；表达式3)
-        {语句;}
-</code></pre><p>While:<br>    While(表达式)<br>        语句；</p>
-<pre><code>do
-{语句;}
-While(表达式)
+def    add_new_urls(self,urls):
+    if urls is None or len(urls)==0:
+        return 
+    for url in urls:
+        self.add.new_url(url)
+
+def has_new_url(self):
+    return len(self.new_urls)!=0
+
+def get_new_url(self):
+    new_url=self.new_urls.pop()
+    self.old_urls.add(new_url)
+    return new_url
+</code></pre><p>class HtmlDownloader(object):</p>
+<pre><code>def download(self,url):
+    if url is None:
+        return None
+
+    response=urllib2.urlopen(url)
+
+    if response.getcode()!=200:
+        return None
+
+    return response.read()
+</code></pre><p>class HtmlParser(object):</p>
+<pre><code>def _get_new_urls(self,page_url,soup):
+    links=soup.find_all(&quot;a&quot;,herf=re.compile(r&quot;/view/\d+\.htm&quot;))
+    for link in links:
+        new_url=link[&quot;herf&quot;]
+        new_full_url=urlparser.urljoin(page_url,new_url)
+        new_urls.add(new_full_url)
+    return new_urls
+
+def _get_new_data(self,page_url,soup):
+    res_data={}
+
+    resdata[&quot;url&quot;]=page_url
+
+    title_node=soup.find(&quot;dd&quot;,class_=&quot;LemmaWgt-LemmaTitle-title&quot;).find(&quot;h1&quot;)
+    res_data[&quot;title&quot;]=title_node.get_text()
+
+    summary_node=soup.find(&quot;div&quot;,class_=&quot;Lemma-summary&quot;)
+    res_data[&quot;summary&quot;]=summary_node.get_text()
+
+    return res_data
+
+def parse(self,page_url,html_count):
+    if page_url is None or html_cont is None:
+        return 
 
 
-while(表达式)
-do
-    {语句;}
-</code></pre><p>}</p>
-<p>Python:<br>{<br>for:<br>    for 循环变量 in 循环结构：<br>        语句</p>
-<pre><code>for 循环变量 in 循环结构：
-    语句1
-else：
-    语句2
-</code></pre><p>While:<br>    While 条件：<br>        语句</p>
-<pre><code>While 条件：
-    语句1
-else：
-    语句2
-</code></pre><p>}</p>
-<p>Shell:<br>{<br>for 变量名 in 取值列表<br>do<br>    命令序列<br>done</p>
-<p>While 条件测试语句<br>do<br>    命令序列<br>done<br>}</p>
-<p>##条件选择结构<br>C/C++<br>{<br>If 表达式<br>{语句;}</p>
-<p>If 表达式<br>{ 语句；}<br>else<br>{语句；}</p>
-<p>if 表达式<br>    if 表达式<br>        {语句；}</p>
-<p>switch (表达式)<br>    case 常量: 语句；break；<br>    …<br>    default:表达式；break;<br>}</p>
-<p>Python:<br>{（&lt;表达式1&gt; if &lt;条件&gt; else &lt;表达式2&gt;）<br>If 条件：<br>    语句</p>
-<p>if 条件：<br>    语句1<br>else：<br>    语句2</p>
-<p>if 条件：<br>    语句1<br>elif 条件2：<br>    语句2<br>…<br>else:<br>    语句n<br>}</p>
-<p>Shell<br>{<br>If 条件测试 []<br>then 命令序列<br>fi</p>
-<p>if 条件测试[]<br>then 命令序列1<br>else 命令序列2<br>fi</p>
-<p>If 条件测试1<br>then 命令序列1<br>elif 条件测试2<br>then 命令序列2<br>else 命令序列3<br>fi</p>
-<p>case 变量值 in<br>模式1）<br>    命令序列1<br>    ;;<br>…<br>*）<br>    默认命令序列<br>esac<br>}</p>
-<p>##参考文献 IRONICBo ,Python</p>
-<p>#2019年3月23日 初稿</p>
+    soup=BeautifulSoup(html_cont,&quot;html.parser&quot;,from_encoding=&quot;utf-8&quot;)
+    new_urls=self._get_new_urls(page_url,soup)
+    new_data=self._get_new_data(page_url,soup)
+    return new_urls,new_data
+</code></pre><p>class HtmlOutpurter(object):<br>    def <strong>init</strong>(self):<br>        self.datas=[]</p>
+<pre><code>def collect_data(self):
+    if data is None:
+        return 
+    seldf.datas.append(data)
+
+def output_html(self):
+    fout=open(&quot;output.html&quot;,&quot;w&quot;)
+
+    fout.write(&quot;&lt;html&gt;&quot;)
+    fout.write(&quot;&lt;body&gt;&quot;)
+    fout.write(&quot;&lt;table&gt;&quot;)
+
+    for data in self.datas:
+        fout.write(&quot;&lt;tr&gt;&quot;)
+        fout.write(&quot;&lt;td&gt;{}&lt;/td&gt;&quot;.format(data[&quot;url&quot;]).encode(&quot;utf-8&quot;))
+        fout.write(&quot;&lt;td&gt;{}&lt;/td&gt;&quot;.format(data[&quot;title&quot;]).encode(&quot;utf-8&quot;))
+        fout.write(&quot;&lt;td&gt;{}&lt;/td&gt;&quot;.format(data[&quot;summary&quot;]).encode(&quot;utf-8&quot;))
+        fout.write(&quot;&lt;/tr&gt;&quot;)
+
+    fout.write(&quot;&lt;/table&gt;&quot;)
+    fout.write(&quot;&lt;/body&gt;&quot;)
+    fout.write(&quot;&lt;/html&gt;&quot;)
+
+    fout.close()
+</code></pre><p>class SpiderMain(object):<br>    def <strong>init</strong>(self):<br>        self.urls=url_manger.UrlManger()<br>        self.downloader=html_downloader.HtmlDownloader()<br>        self.parser=html_parser.HtmlParser()<br>        self.outputer=html_outputer.HtmlOutputer()<br>    def craw(self,root_url):<br>        count=1<br>        self.urls.add_new_url(root_url)<br>        while self.urls.has_new_url():<br>            new_url=self.urls.get_new_url()<br>            print(“craw{}:{}”.format(count,new_url))<br>            html_count=self.downloader.download(new_url)<br>            new_urls,new_data=self.parser.parser(new_url,html_cont)<br>            self.urls.add_new_urls(new_urls)<br>            self.outputer.collect_data(new_data)</p>
+<pre><code>    if count==1000:
+        break
+
+
+self.outputer.output_html()
+</code></pre><p>def main():<br>    root_url=”<a href="http://baike.baidu.com/view/21087.htm&quot;" target="_blank" rel="noopener">http://baike.baidu.com/view/21087.htm&quot;</a><br>    obj_spider=SpiderMain()<br>    obj_spider.craw(root_url)</p>
+<p>##事实上有点小毛病，等以后再回头看看</p>
+<p>#来自IRONIC.Bo ,imooc</p>
+<p>#2019年5月3日</p>
 
       
 
@@ -257,6 +308,17 @@ else：
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -307,7 +369,7 @@ else：
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/11/简易的百度百科爬虫/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,18 +383,18 @@ else：
   
 <nav id="article-nav">
   
-    <a href="/2019/03/30/HTML5基础知识清单/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/05/11/ubuntu操作基本快捷键/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          HTML5基础知识清单
+          ubuntu操作基本快捷键
         
       </div>
     </a>
   
   
-    <a href="/2019/03/17/基础的排序算法C语言/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基础的排序算法C语言</div>
+    <a href="/2019/05/11/PyCharm快捷键-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PyCharm快捷键</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -360,7 +422,7 @@ else：
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="C-C-shell-python逻辑结构代码对比" data-title="C/C++,shell,python逻辑结构代码对比" data-url="http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/"></div>
+	<div class="ds-thread" data-thread-key="简易的百度百科爬虫" data-title="简易的百度百科爬虫" data-url="http://yoursite.com/2019/05/11/简易的百度百科爬虫/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -383,8 +445,8 @@ else：
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/03/23/C-C-shell-python逻辑结构代码对比/", 
-    sourceId: "C-C-shell-python逻辑结构代码对比",
+    url: "http://yoursite.com/2019/05/11/简易的百度百科爬虫/", 
+    sourceId: "简易的百度百科爬虫",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -393,7 +455,7 @@ else：
   
 
   
-  <div id="SOHUCS" sid="C-C-shell-python逻辑结构代码对比"></div> 
+  <div id="SOHUCS" sid="简易的百度百科爬虫"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
