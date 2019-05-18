@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | IRONICBo&#39;s BLOG</title>
+  <title>酷狗爬虫 | IRONICBo&#39;s BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IRONICBo&apos;s First PageBlog in 2019">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IRONICBo&#39;s BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="##酷狗爬虫">
+<meta name="keywords" content="爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="酷狗爬虫">
+<meta property="og:url" content="http://yoursite.com/2019/05/18/酷狗爬虫/index.html">
 <meta property="og:site_name" content="IRONICBo&#39;s BLOG">
-<meta property="og:description" content="IRONICBo&apos;s First PageBlog in 2019">
+<meta property="og:description" content="##酷狗爬虫">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-18T08:25:57.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IRONICBo&#39;s BLOG">
-<meta name="twitter:description" content="IRONICBo&apos;s First PageBlog in 2019">
+<meta name="twitter:title" content="酷狗爬虫">
+<meta name="twitter:description" content="##酷狗爬虫">
   
     <link rel="alternative" href="/atom.xml" title="IRONICBo&#39;s BLOG" type="application/atom+xml">
   
@@ -157,157 +159,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-酷狗爬虫" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      酷狗爬虫
+    </h1>
+  
+
+        
+        <a href="/2019/05/18/酷狗爬虫/" class="archive-article-date">
+  	<time datetime="2019-05-18T08:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##酷狗爬虫</p>
+<a id="more"></a>
+<p>#导入request,bs4,time的库（用pip3下载！！！）<br>import requests<br>from bs4 import BeautifulSoup<br>import time</p>
+<p>headers={‘user-agent’:’Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36’}</p>
+<p>#ubuntu的chrome请求头</p>
+<p>##方法：直接F12或者右键“查询”，找到network,F5刷新，点击一个元素然后选择最左边的Headers，向下找uers-agent</p>
+<p>#写入文件的路径<br>file=open(“//home//ironic//桌面//酷狗排行榜单500.txt”,”w”)</p>
+<p>def get_info(url):<br>    wb_data=requests.get(url,headers=headers)<br>    soup=BeautifulSoup(wb_data.text,’lxml’)<br>    ranks=soup.select(‘span.pc_temp_num’)<br>    titles=soup.select(‘div.pc_temp_songlist&gt;ul&gt;li&gt;a’)#对应的标签<br>    times=soup.select(‘span.pc_temp_tips_r&gt;span’)<br>        for rank,title,time in zip(ranks,titles,times):</p>
+<p>#字典<br>            data={<br>             ‘rank’:rank.get_text().strip(),<br>            ‘singer’:title.get_text().split(‘-‘)[0].strip(),<br>            ‘song’:title.get_text().split(‘-‘)[1].strip(),#split获取singer songs信息<br>            ‘time’:time.get_text().strip()<br>                }<br>            print(data)<br>            file.write(“\t{}\t\n”.format(data))<br>    except IndexError:<br>        pass<br>def main():<br>    urls = [‘<a href="http://www.kugou.com/yy/rank/home/{}-8888.html&#39;.format(str(i)" target="_blank" rel="noopener">http://www.kugou.com/yy/rank/home/{}-8888.html&#39;.format(str(i)</a>) for i in range(1, 24)]<br>    for url in urls:<br>        get_info(url)<br>    time.sleep(1)</p>
+<p>#程序的入口<br>if <strong>name</strong>==’<strong>main</strong>‘:<br>   main()</p>
+<p>#IRONIC.BO</p>
+<p>#2019年5月16号</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank You!!!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/30/HTML5基础知识清单/" class="archive-article-date">
-  	<time datetime="2019-03-29T17:06:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/30/HTML5基础知识清单/">HTML5基础知识清单</a>
-    </h1>
-  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/18/酷狗爬虫/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/C-C-shell-python逻辑结构代码对比/" class="archive-article-date">
-  	<time datetime="2019-03-22T16:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/11/ubuntu操作基本快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu操作基本快捷键</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/23/C-C-shell-python逻辑结构代码对比/">C/C++,shell,python逻辑结构代码对比</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="酷狗爬虫" data-title="酷狗爬虫" data-url="http://yoursite.com/2019/05/18/酷狗爬虫/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/05/18/酷狗爬虫/", 
+    sourceId: "酷狗爬虫",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
+  
+  <div id="SOHUCS" sid="酷狗爬虫"></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/17/基础的排序算法C语言/" class="archive-article-date">
-  	<time datetime="2019-03-17T14:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/17/基础的排序算法C语言/">基础的排序算法C语言</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/14/新手必需掌握的Linux命令/" class="archive-article-date">
-  	<time datetime="2019-03-14T15:48:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/14/新手必需掌握的Linux命令/">新手必需掌握的Linux命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/03/IRONICBO-s-BLOG/" class="archive-article-date">
-  	<time datetime="2019-03-02T16:01:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/03/IRONICBO-s-BLOG/">IRONICBO&#39;s BLOG</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -330,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
