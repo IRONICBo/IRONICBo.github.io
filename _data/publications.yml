@@ -1,22 +1,37 @@
 main:
 
-  - title: Continual Learning for Abdominal Multi-Organ and Tumor Segmentation
-    authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou* (*Corresponding authors)
-    conference_short: MICCAI
-    conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
-    pdf: https://arxiv.org/pdf/2306.00988.pdf
-    code: https://github.com/MrGiovanni/ContinualLearning
-    bibtex: https://bib.yliu.me/MICCAI23.txt
-    image: ./assets/img/teaser_example_2.png
-    notes: Early Accept
+  # - title: Continual Learning for Abdominal Multi-Organ and Tumor Segmentation
+  #   authors: Yixiao Zhang, Xinyi Li, Huimiao Chen, Alan Yuille, <strong>Yaoyao Liu*</strong>, Zongwei Zhou* (*Corresponding authors)
+  #   conference_short: MICCAI
+  #   conference: International Conference on Medical Image Computing and Computer-Assisted Intervention <strong>(MICCAI)</strong>, 2023.
+  #   pdf: https://arxiv.org/pdf/2306.00988.pdf
+  #   # code: https://github.com/MrGiovanni/ContinualLearning
+  #   bibtex: https://bib.yliu.me/MICCAI23.txt
+  #   image: ./assets/img/teaser_example_2.png
+  #   notes: Accept
 
-  - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
-    authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-    conference_short: CVPR
-    conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
-    pdf: https://arxiv.org/pdf/2002.10211.pdf
-    code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
-    page: https://class-il.mpi-inf.mpg.de/mnemonics/
-    bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+  # - title: "Mnemonics Training: Multi-Class Incremental Learning without Forgetting"
+  #   authors: <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
+  #   conference_short: CVPR
+  #   conference: IEEE/CVF Conference on Computer Vision and Pattern Recognition <strong>(CVPR)</strong>, 2020.
+  #   pdf: https://arxiv.org/pdf/2002.10211.pdf
+  #   code: https://github.com/yaoyao-liu/class-incremental-learning/tree/main/mnemonics-training
+  #   page: https://class-il.mpi-inf.mpg.de/mnemonics/
+  #   bibtex: https://class-il.mpi-inf.mpg.de/mnemonics/
+  #   notes: Oral Presentation
+  #   image: ./assets/img/teaser_example.png
+
+  - title: "Schedulability Analysis for Self-suspending Tasks Under EDF-like Scheduling"
+    authors: Yan Wang, <strong>Bo Lv</strong>, Quan Zhou, Junfei Li, Tan Tan
+    conference_short: TC (CCF-A)
+    conference: IEEE Transactions on Computers, 2025.
+    notes: Accept
+    image: ./assets/img/tc-2025.png
+
+  - title: "KVPruner: Structural Pruning for Faster and Memory-Efficient Large Language Models"
+    authors: <strong>Bo Lv</strong>, Quan Zhou, Xuanang Ding, Yan Wang, Zeming Ma
+    conference_short: ICASSP (CCF-B)
+    conference: Proceedings of the 50th IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP 2025), Hyderabad, India, April 06-11, 2025.
+    pdf: https://arxiv.org/pdf/2409.11057
     notes: Oral Presentation
-    image: ./assets/img/teaser_example.png
+    image: ./assets/img/icassp-2025.png
