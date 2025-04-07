@@ -25,7 +25,8 @@ main:
     authors: Yan Wang, <strong>Bo Lv</strong>, Quan Zhou, Junfei Li, Tan Tan
     conference_short: TC (CCF-A)
     conference: IEEE Transactions on Computers, 2025.
-    notes: Accept
+    pdf: https://ieeexplore.ieee.org/document/10949828
+    notes: Published
     image: ./assets/img/tc-2025.png
 
   - title: "KVPruner: Structural Pruning for Faster and Memory-Efficient Large Language Models"
